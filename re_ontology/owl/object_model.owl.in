@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY roboearth_path 'file://@RE_PATH_PREFIX@/owl/'>
+    <!ENTITY kb "http://ias.cs.tum.edu/kb/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY knowrob "http://ias.cs.tum.edu/kb/knowrob.owl#" >
+    <!ENTITY roboearth "http://www.roboearth.org/kb/roboearth.owl#" >
+    <!ENTITY object_model "http://www.roboearth.org/kb/object_model.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.roboearth.org/kb/object_model.owl#"
+     xml:base="http://www.roboearth.org/kb/object_model.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:roboearth="http://www.roboearth.org/kb/roboearth.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://ias.cs.tum.edu/kb/knowrob.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+      <owl:imports rdf:resource="&roboearth_path;roboearth.owl"/>
+    </owl:Ontology>
+
+
+    <roboearth:RoboEarthObjRecModelPlanar rdf:about="#ObjModelWorkshop0710">
+        <rdfs:comment rdf:datatype="&xsd;string">
+
+          Description of an object recognition model. It is an instance of the class
+          RoboEarthObjRecModelPlanar that describes some properties of this model,
+          namely the algorithm that created it (and will thus be able to use it later
+          on), the creation time and links to the model binary file and (potentially
+          multiple) images/raw data.
+
+        </rdfs:comment>
+        <roboearth:createdByAlgorithm rdf:resource="&roboearth;RoboEarthObjRecSystem"/>
+        <roboearth:creationDateTime rdf:datatype="&xsd;dateTime">2010-07-08T14:39:00+02:00</roboearth:creationDateTime>
+        <roboearth:linkToRecognitionModel rdf:datatype="&xsd;string">http://www.roboearth.org/data/workshop_objrec.model</roboearth:linkToRecognitionModel>
+        <roboearth:linkToImageData rdf:datatype="&xsd;string">http://www.roboearth.org/data/workshop_objrec1.jpg</roboearth:linkToImageData>
+        <roboearth:linkToImageData rdf:datatype="&xsd;string">http://www.roboearth.org/data/workshop_objrec2.jpg</roboearth:linkToImageData>
+        <roboearth:providesModelFor rdf:resource="&knowrob;Cup"/>
+        <roboearth:providesModelFor rdf:resource="&knowrob;Plate"/>
+    </roboearth:RoboEarthObjRecModelPlanar>
+
+
+    <knowrob:Cup rdf:about="#Cup2342">
+        <rdfs:comment rdf:datatype="&xsd;string">
+
+          If we would like to store detections of single objects, we can create an instance
+          of the respective class, in this case a Cup. Object-related properties like its
+          dimensions (things that don't change over time) can be described as object properties.
+          The object position, in contrast, has to be modeled in a different way, see also
+          http://ias.in.tum.de/kb/wiki/index.php/Modeling_perceived_or_inferred_objects
+
+        </rdfs:comment>
+        <roboearth:roboearthObjID rdf:datatype="&xsd;int">2342</roboearth:roboearthObjID>
+        <knowrob:depthOfObject rdf:datatype="&xsd;float">0.052</knowrob:depthOfObject>
+        <knowrob:widthOfObject rdf:datatype="&xsd;float">0.052</knowrob:widthOfObject>
+        <knowrob:heightOfObject rdf:datatype="&xsd;float">0.072</knowrob:heightOfObject>
+    </knowrob:Cup>
+
+
+    <roboearth:ReVisionPerception rdf:about="#ReVisionPerception_102">
+        <rdfs:comment rdf:datatype="&xsd;string">
+
+          This and the following instances describe the detected position of the cup. This
+          position is subject to change over time. In order to describe the changes in position
+          and model this 1:n relation between an object and its positions, we need an additional
+          entity in between the object instance #Cup2342 and the pose matrix (or, in general,
+          matrices)
+
+        </rdfs:comment>
+        <knowrob:objectActedOn rdf:resource="#Cup2342"/>
+        <knowrob:eventOccursAt rdf:resource="#rotationmatrix3d_103"/>
+        <knowrob:startTime rdf:resource="#timepoint_1271159865.00"/>
+        <roboearth:recognizedUsingModel rdf:resource="#ObjModelWorkshop0710"/>
+    </roboearth:ReVisionPerception>
+
+    <knowrob:RotationMatrix3D rdf:about="#rotationmatrix3d_103">
+        <knowrob:m20 rdf:datatype="&xsd;float">-0.0</knowrob:m20>
+        <knowrob:m01 rdf:datatype="&xsd;float">-1.0</knowrob:m01>
+        <knowrob:m32 rdf:datatype="&xsd;float">0.0</knowrob:m32>
+        <knowrob:m00 rdf:datatype="&xsd;float">0.0</knowrob:m00>
+        <knowrob:m02 rdf:datatype="&xsd;float">0.0</knowrob:m02>
+        <knowrob:m12 rdf:datatype="&xsd;float">0.0</knowrob:m12>
+        <knowrob:m21 rdf:datatype="&xsd;float">0.0</knowrob:m21>
+        <knowrob:m30 rdf:datatype="&xsd;float">0.0</knowrob:m30>
+        <knowrob:m31 rdf:datatype="&xsd;float">0.0</knowrob:m31>
+        <knowrob:m11 rdf:datatype="&xsd;float">0.0</knowrob:m11>
+        <knowrob:m23 rdf:datatype="&xsd;float">0.688536</knowrob:m23>
+        <knowrob:m10 rdf:datatype="&xsd;float">1.0</knowrob:m10>
+        <knowrob:m33 rdf:datatype="&xsd;float">1.0</knowrob:m33>
+        <knowrob:m22 rdf:datatype="&xsd;float">1.0</knowrob:m22>
+        <knowrob:m13 rdf:datatype="&xsd;float">1.17431</knowrob:m13>
+        <knowrob:m03 rdf:datatype="&xsd;float">4.095035</knowrob:m03>
+    </knowrob:RotationMatrix3D>
+
+    <knowrob:TimePoint rdf:about="#timepoint_1271159865.00"/>
+
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- vv the remainder just contains references to classes and properties defined elsewhere  -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#createdByAlgorithm -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;createdByAlgorithm"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#providesModelFor -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;providesModelFor"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#creationDateTime -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;creationDateTime"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#linkToRecognitionModel -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;linkToRecognitionModel"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthObjRecSystem -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthObjRecSystem"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthObjRecModel -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthObjRecModel"/>
+
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#Cup -->
+
+    <owl:Class rdf:about="&knowrob;Cup"/>
+
+</rdf:RDF>
+
+

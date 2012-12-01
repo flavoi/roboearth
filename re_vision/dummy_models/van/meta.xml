@@ -1,0 +1,9 @@
+<model>
+	<name>van</name>
+	<type>3D</type>
+	<faces>14</faces>
+	<dimensions>
+		<scale>1</scale>
+	</dimensions>
+</model>
+

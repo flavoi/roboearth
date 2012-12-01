@@ -1,0 +1,19 @@
+<!-- 
+ * Example of launching the ObjectDetector for simulation.
+ * Remap the /camera_info topic to your camera topic
+-->
+
+<launch>
+  <node name="ObjectDetectorDummy" pkg="re_vision" type="ObjectDetectorDummy" 
+    args="-v -d -c unibrain_bayer" cwd="node" output="screen">
+    <remap from="/camera_info" to="/camera_info" />
+    <remap from="/re_vision/detector_visualization" 
+      to="/re_vision/detector_visualization" />
+  </node>
+  
+  <node name="TestObjectDetector" pkg="re_vision" type="TestObjectDetector" 
+    args="all" cwd="node" output="screen">
+  </node>
+  
+</launch>
+

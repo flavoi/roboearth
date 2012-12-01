@@ -1,0 +1,9 @@
+string searchID        # unique identifier of an environment (or
+                       # any prefix of it)
+---
+bool success           # success of request
+string[] uids          # array of unique identifiers of found environments
+string[] environments  # array of OWL encoded environments
+re_msgs/StringArray[] filenames  # array of lists with environment related filenames
+re_msgs/StringArray[] fileURLs   # array with URLs of environment related files
+

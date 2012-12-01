@@ -1,0 +1,7 @@
+# Transmits an array of object UIDs, which shall be detected by re_vision
+# (given UIDs extend the list of objects detected by re_vision)
+string[] uids           # array of object UIDs (class.id)
+---
+string[] detectableUIDs # array of all object UIDs, whose models were found on 
+                        # RoboEarth and will be detected (may include objects
+                        # that have been requested in prior calls)

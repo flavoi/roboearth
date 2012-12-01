@@ -1,0 +1,3 @@
+<launch>
+        <node name="re_cop_interface" pkg="re_comm" type="CopRoboEarthInterface" cwd="node" />
+</launch>

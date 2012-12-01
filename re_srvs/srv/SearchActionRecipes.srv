@@ -1,0 +1,6 @@
+string searchID   # unique identifier of a recipe (or
+                  # any prefix of it)
+---
+bool success      # success of request
+string[] uids     # array of unique identifiers of found action recipes
+string[] recipes  # array of OWL encoded action recipes

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+OS=`uname -s`
+if [ "$OS" == "Darwin" ] ; then
+  DYLD_LIBRARY_PATH=/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin:/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin:$DYLD_LIBRARY_PATH java -classpath /home/flavio/Works/Roboearth_iaslab/stacks/roboearth/re_2dmap_extractor/bin:/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/re_2dmap_extractor/bin:/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin:/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/re_2dmap_extractor/bin:/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin: roboearth.wp5.maps.MapExtractorServer  $@
+else
+  LIBJSIG=`find $JAVA_HOME/jre/lib/ -maxdepth 2 -name "libjsig.so"`
+  if [ -z "$LIBJSIG" ]; then
+    echo "Cannot find libjsig ... maybe you need to set JAVA_HOME?"
+    exit 1
+  fi
+
+  LD_PRELOAD=:$LIBJSIGL:$LD_PRELOAD LD_LIBRARY_PATH=/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin:/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin:$LD_LIBRARY_PATH java -classpath /home/flavio/Works/Roboearth_iaslab/stacks/roboearth/re_2dmap_extractor/bin:/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/re_2dmap_extractor/bin:/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin:/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/re_2dmap_extractor/bin:/opt/ros/fuerte/stacks/client_rosjava_jni/rosjava_jni/bin::$CLASSPATH roboearth.wp5.maps.MapExtractorServer  $@
+fi
+
+

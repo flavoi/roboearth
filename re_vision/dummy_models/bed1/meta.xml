@@ -1,0 +1,17 @@
+<model>
+	<name>bed1</name>
+	<type>planar</type>
+	<faces>1</faces>
+	<dimensions>
+		<width>0.68</width>
+		<height>0.28</height>
+		<depth>2</depth>
+		<face>
+			<index>0</index>
+			<width>0.68</width>
+			<height>0.28</height>
+			<oTf>1 0 0 0 0 1 0 0 0 0 1 -1 0 0 0 1 </oTf>
+		</face>
+	</dimensions>
+</model>
+

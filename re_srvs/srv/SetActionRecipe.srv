@@ -1,0 +1,9 @@
+# unique identifier, uid = class.id
+string cls          # action recipe class
+string id           # action recipe id
+string description  # short human readable description
+string recipe       # OWL encoded machine readable description
+string apiKey       # the user's API key (get yours from 
+                    # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success        # success of submission

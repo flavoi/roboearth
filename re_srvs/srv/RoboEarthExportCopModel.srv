@@ -1,0 +1,5 @@
+# Moritz Tenorth, tenorth@cs.tum.edu
+# export object model described by CoP ID to RoboEarth
+uint64 object_id          # id of the object in CoP
+---
+byte success

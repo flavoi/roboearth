@@ -1,0 +1,6 @@
+# Moritz Tenorth, tenorth@cs.tum.edu
+# retrieve object model from RoboEarth and add it to CoP
+string object_name              # object identifier to search for in the RoboEarth knowledge base
+---
+byte success
+string owldata

@@ -1,0 +1,41 @@
+<model>
+	<name>bottle1</name>
+	<type>planar</type>
+	<faces>5</faces>
+	<dimensions>
+		<width>0.05</width>
+		<height>0.126</height>
+		<depth>0.049</depth>
+		<face>
+			<index>0</index>
+			<width>0.05</width>
+			<height>0.126</height>
+			<oTf>1 0 0 0 0 1 0 0 0 0 1 -0.0245 0 0 0 1 </oTf>
+		</face>
+		<face>
+			<index>1</index>
+			<width>0.049</width>
+			<height>0.126</height>
+			<oTf>6.12303e-17 0 -1 0.025 0 1 0 0 1 0 6.12303e-17 0 0 0 0 1 </oTf>
+		</face>
+		<face>
+			<index>2</index>
+			<width>0.049</width>
+			<height>0.126</height>
+			<oTf>6.12303e-17 0 1 -0.025 0 1 0 0 -1 0 6.12303e-17 0 0 0 0 1 </oTf>
+		</face>
+		<face>
+			<index>3</index>
+			<width>0.049</width>
+			<height>0.049</height>
+			<oTf>1 0 0 0 0 6.12303e-17 1 -0.063 0 -1 6.12303e-17 0 0 0 0 1 </oTf>
+		</face>
+		<face>
+			<index>4</index>
+			<width>0.049</width>
+			<height>0.049</height>
+			<oTf>1 0 0 0 0 6.12303e-17 -1 0.063 0 1 6.12303e-17 0 0 0 0 1 </oTf>
+		</face>
+	</dimensions>
+</model>
+

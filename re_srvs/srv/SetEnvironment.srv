@@ -1,0 +1,11 @@
+# unique identifier, uid = class.id
+string cls            # environment class
+string id             # environment id
+string description    # short human readable description
+string environment    # OWL encoded machine readable description
+re_msgs/File[] files  # environment related binary files (they must have
+                      # unique file names, might be an empty array) 
+string apiKey         # the user's API key (get yours from 
+                      # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success          # success of submission

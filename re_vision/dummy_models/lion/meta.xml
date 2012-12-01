@@ -1,0 +1,9 @@
+<model>
+	<name>lion</name>
+	<type>3D</type>
+	<faces>20</faces>
+	<dimensions>
+		<scale>1</scale>
+	</dimensions>
+</model>
+

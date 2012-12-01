@@ -1,0 +1,4 @@
+string recipeUID  # unique identifier of the recipe
+---
+bool success      # success of request
+string recipe     # OWL encoded action recipe

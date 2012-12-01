@@ -1,0 +1,5 @@
+string recipeUID  # unique identifier of the recipe
+string apiKey     # the user's API key (get yours from 
+                  # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success      # whether recipe was found and deleted

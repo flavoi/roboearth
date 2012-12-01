@@ -1,0 +1,6 @@
+string envUID      # an environment's unique identifier
+string filename    # name of file related to environment uid
+---
+bool success       # success of request
+re_msgs/File file  # requested file
+ 

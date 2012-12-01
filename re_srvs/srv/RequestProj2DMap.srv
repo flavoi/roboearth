@@ -1,0 +1,9 @@
+string envUID        # an environment's unique identifier
+float64 minZ         # minimum height to consider for 2d projection
+float64 maxZ         # maximum height to consider for 2d projection
+string targetMapName # simple name of map file without extension,
+                     # .pgm and .yaml will be added to resulting files' names
+---
+bool success         # success of request
+re_msgs/RosFile map  # content of 2d map (pgm format)
+re_msgs/RosFile meta # content of meta file (yaml format)

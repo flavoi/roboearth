@@ -1,0 +1,7 @@
+string environmentUID  # unique identifier of the environment
+---
+bool success           # success of request
+string environment     # OWL encoded environment
+string[] filenames     # array with names of environment related files
+string[] fileURLs      # array with URLs of environment related files
+

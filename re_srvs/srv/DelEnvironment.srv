@@ -1,0 +1,5 @@
+string environmentUID  # unique identifier of the environment
+string apiKey          # the users API key (get yours from 
+                       # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success           # whether environment was found and deleted

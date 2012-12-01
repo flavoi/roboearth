@@ -1,0 +1,6 @@
+string envUID     # unique identifier of the environment
+string filename   # name of file related to environment uid
+string apiKey     # the user's API key (get yours from 
+                  # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success      # whether environment was found and deleted

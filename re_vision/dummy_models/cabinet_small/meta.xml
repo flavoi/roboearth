@@ -1,0 +1,17 @@
+<model>
+	<name>cabinet1</name>
+	<type>planar</type>
+	<faces>1</faces>
+	<dimensions>
+		<width>0.35</width>
+		<height>0.69</height>
+		<depth>0</depth>
+		<face>
+			<index>0</index>
+			<width>0.35</width>
+			<height>0.69</height>
+			<oTf>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 </oTf>
+		</face>
+	</dimensions>
+</model>
+

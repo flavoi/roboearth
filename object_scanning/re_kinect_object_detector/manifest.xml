@@ -1,0 +1,30 @@
+<package>
+  <description brief="Detection method for re_object_recorder">
+
+     <p>
+     This package implements a detection method for models created by
+     re_object_recorder.
+     </p>
+
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+  <author>Andreas Koch</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/re_kinect_object_detector</url>
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="image_transport"/>
+  <depend package="tf"/>
+  <depend package="cv_bridge"/>
+  <!--depend package="pcl_visualization"/-->
+  <depend package="pcl"/>
+  <depend package="re_msgs"/>
+  <rosdep name="tinyxml" />
+
+</package>
+
+

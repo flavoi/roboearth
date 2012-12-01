@@ -1,0 +1,7 @@
+Header header
+sensor_msgs/Image Image
+string[] Objects
+int32 MaxPointsPerObject
+---
+re_msgs/DetectedObject[] Detections 
+

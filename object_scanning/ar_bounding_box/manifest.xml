@@ -1,0 +1,41 @@
+<package>
+  <description brief="Object Recording using Multiple Markers and Kinect">
+     
+     <p>
+     ar_bounding_box detects a set of marker patterns and creates a coordinate
+     system and a bounding box around them. The point cloud inside this
+     bounding box is published and can be used by re_object_recorder to create
+     object models.
+     </p>
+
+     <p>
+     This package is based on Michael Ferguson's <a href="http://www.ros.org/wiki/ar_kinect">ar_kinect</a> package.
+     </p>
+
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+  <author>Andreas Koch</author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.ros.org/wiki/ar_bounding_box</url>
+  <versioncontrol type="svn" url="https://ipvs.informatik.uni-stuttgart.de/roboearth/repos/release"/>
+  <!--<export> <rosdoc external="http://roboearth.org/wiki"/> </export> -->
+  <logo>http://www.roboearth.org/sites/default/files/RoboEarth.org_logo.gif</logo>
+
+  <rosdep name="glut"/>
+  <depend package="visualization_msgs"/>
+  <depend package="artoolkit"/>
+  <depend package="ar_pose"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="pcl_ros"/>
+  <depend package="pcl"/>
+  <depend package="opencv2"/>
+  <depend package="image_transport"/>
+  <depend package="cv_bridge"/>
+  <depend package="roscpp"/>
+</package>
+
+

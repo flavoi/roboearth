@@ -1,0 +1,25 @@
+ <package>
+  <description brief="RoboEarth's 2D map extractor">
+
+     re_2dmap_extractor creates arbitrary 2D maps from 3D Octomaps. Either it 
+     takes out a 2D slice at a given height above ground or it creates
+     a 2d map from projecting a 3D slice down, depending on the ROS services 
+     used. The former 2D map may be used for localization, the latter for 
+     navigation.
+
+  </description>
+  <author>Alexander Perzylo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/re_2dmap_extractor</url>
+
+  <rosdep name="octomap" />
+  <depend package="re_msgs"/>
+  <depend package="rosjava_jni"/>
+
+  <export>
+    <java classpath="${prefix}/bin"/>
+  </export>
+
+</package>
+

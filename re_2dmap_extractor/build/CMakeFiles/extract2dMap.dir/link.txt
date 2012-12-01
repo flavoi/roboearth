@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/extract2dMap.dir/src/Extract2dMap.o CMakeFiles/extract2dMap.dir/src/MapExtractor.o  -o ../bin/extract2dMap -rdynamic -L/opt/ros/fuerte/lib -loctomap -loctomath -lroslib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -Wl,-rpath,/opt/ros/fuerte/lib 

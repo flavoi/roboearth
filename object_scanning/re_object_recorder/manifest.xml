@@ -1,0 +1,36 @@
+<package>
+  <description brief="Kinect Object Recorder User Interface">
+     <p>
+     This package provides a Qt4 user interface for creating, storing and
+     uploading Object Models using a Kinect camera and multiple markers.
+     </p>
+
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+
+  <author>Andreas Koch</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/re_object_recorder</url>
+    
+  <rosdep name="qt4"/>
+
+  <depend package="roscpp"/>
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  <depend package="sensor_msgs"/>
+  <!--<depend package="opencv2"/>-->
+  <!--depend package="pcl_visualization"/-->
+  <depend package="re_srvs"/>
+  <depend package="re_vision"/>
+
+  <export>
+       <cpp cflags="-I${prefix}/include/" lflags="-L${prefix}/lib -Wl,-rpath,-L${prefix}/lib -lqminizip"/>
+  </export>
+
+
+</package>
+
+

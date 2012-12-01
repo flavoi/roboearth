@@ -1,0 +1,4 @@
+string name
+int8 attempts
+---
+int8 result

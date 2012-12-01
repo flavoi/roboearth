@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ehow "http://www9.cs.tum.edu/kb/ehow.owl#" >
+    <!ENTITY knowrob "http://ias.cs.tum.edu/kb/knowrob.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.roboearth.org/kb/set_a_table.owl#"
+     xml:base="http://www.roboearth.org/kb/set_a_table.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:ehow="http://www9.cs.tum.edu/kb/ehow.owl#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:knowrob="http://ias.cs.tum.edu/kb/knowrob.owl#">
+    <owl:Ontology rdf:about=""/>
+    <owl:Class rdf:ID="Place1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;inFrontOf-Generally"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;Chair-PieceOfFurniture"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;Place"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="Place3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="&knowrob;Place"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;toTheSideOf"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;Napkin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="Place2">
+        <rdfs:subClassOf rdf:resource="&knowrob;Place"/>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere7">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;DrinkingMug"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere5">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;Knife"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;toLocation"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;RightSide"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere6">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;Spoon-SilverwarePiece"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;DinnerPlate"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere4">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;Fork-SilverwarePiece"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;toLocation"/>
+                        <owl:someValuesFrom rdf:resource="#Place3"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;PlaceMat"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;toLocation"/>
+                        <owl:someValuesFrom rdf:resource="#Place1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="PuttingSomethingSomewhere2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;objectActedOn"/>
+                        <owl:someValuesFrom rdf:resource="&knowrob;Napkin"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class rdf:ID="SetATable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere3"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere4"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere5"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere6"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#PuttingSomethingSomewhere7"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&knowrob;Action"/>
+        <rdfs:label rdf:datatype="&xsd;string">set a table</rdfs:label>
+    </owl:Class>
+    <rdf:Description rdf:about="&knowrob;PuttingSomethingSomewhere"/>
+    <rdf:Description rdf:about="&knowrob;Place"/>
+    <rdf:Description rdf:about="&knowrob;Action"/>
+</rdf:RDF>

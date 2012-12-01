@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY roboearth_path 'http://ias.cs.tum.edu/kb/'>
+    <!ENTITY kb "http://ias.cs.tum.edu/kb/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY knowrob "http://ias.cs.tum.edu/kb/knowrob.owl#" >
+    <!ENTITY qudt "http://qudt.org/schema/qudt#" >
+    <!ENTITY roboearth "http://www.roboearth.org/kb/roboearth.owl#" >
+    <!ENTITY cabinet_model "http://www.roboearth.org/kb/cabinet_model.owl#" >
+]>
+
+
+<rdf:RDF xml:base="http://www.roboearth.org/kb/roboearth.owl"
+    xmlns="http://www.roboearth.org/kb/roboearth.owl#"
+    xmlns:knowrob="http://ias.cs.tum.edu/kb/knowrob.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:roboearth="http://www.roboearth.org/kb/roboearth.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+
+
+    <roboearth:RoboEarthObjRecModelPlanar rdf:about="&roboearth;ObjModelCabinet">
+        <roboearth:createdByAlgorithm rdf:resource="&roboearth;RoboEarthObjRecSystem"/>
+        <roboearth:linkToCADModel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://api.roboearth.org/data/objects/cabinet/IkeaExpedit2x4/Expedit_2x4.kmz</roboearth:linkToCADModel>
+        <roboearth:linkToCADModel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://api.roboearth.org/data/objects/cabinet/IkeaExpedit2x4/ExpeditDoor.kmz</roboearth:linkToCADModel>
+        <roboearth:linkToCADModel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://api.roboearth.org/data/objects/cabinet/IkeaExpedit2x4/ExpeditDrawer.kmz</roboearth:linkToCADModel>
+        <roboearth:linkToImageData rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://api.roboearth.org/data/objects/cabinet/IkeaExpedit2x4/expedit.jpg</roboearth:linkToImageData>
+        <roboearth:providesModelFor rdf:resource="&roboearth;IkeaExpedit2x4"/>
+        <roboearth:roboearthObjID  rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cabinet.ikeaexpedit2x4<roboearth:roboearthObjID/>
+    </roboearth:RoboEarthObjRecModelPlanar>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- &qudt;Meter -->
+
+    <rdfs:Datatype rdf:about="&qudt;Meter"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- &roboearth;IkeaExpedit2x4 -->
+
+    <owl:Class rdf:about="&roboearth;IkeaExpedit2x4">
+        <rdfs:subClassOf rdf:resource="&knowrob;Cabinet-PieceOfFurniture"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;properPhysicalParts"/>
+                        <owl:someValuesFrom rdf:resource="&roboearth;IkeaExpeditDoor1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;properPhysicalParts"/>
+                        <owl:someValuesFrom rdf:resource="&roboearth;IkeaExpeditDrawer1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+                        <owl:hasValue>package://re_comm/tmp/cabinet.ikeaexpedit2x4/Expedit_2x4.kmz</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- &roboearth;IkeaExpeditDoor1 -->
+
+    <owl:Class rdf:about="&roboearth;IkeaExpeditDoor1">
+        <rdfs:subClassOf rdf:resource="&knowrob;Door"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;properPhysicalParts"/>
+                <owl:someValuesFrom rdf:resource="&roboearth;IkeaExpeditDoorHandle1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;orientation"/>
+                <owl:hasValue rdf:resource="&roboearth;RotationMatrixDoor1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+                <owl:hasValue>package://re_comm/tmp/cabinet.ikeaexpedit2x4/ExpeditDoor.kmz</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- &roboearth;IkeaExpeditDoor2 -->
+
+    <owl:Class rdf:about="&roboearth;IkeaExpeditDrawer1">
+        <rdfs:subClassOf rdf:resource="&knowrob;Drawer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;orientation"/>
+                <owl:hasValue rdf:resource="&roboearth;RotationMatrixExpeditDrawer1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;properPhysicalParts"/>
+                <owl:someValuesFrom rdf:resource="&roboearth;IkeaExpeditDrawerHandle1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+                <owl:hasValue>package://re_comm/tmp/cabinet.ikeaexpedit2x4/ExpeditDrawer.kmz</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- &roboearth;IkeaExpeditDoorHandle1 -->
+
+    <owl:Class rdf:about="&roboearth;IkeaExpeditDoorHandle1">
+        <rdfs:subClassOf rdf:resource="&knowrob;Handle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;orientation"/>
+                <owl:hasValue rdf:resource="&roboearth;RotationMatrixHandle1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- &roboearth;IkeaExpeditDoorHandle2 -->
+
+    <owl:Class rdf:about="&roboearth;IkeaExpeditDoorHandle2">
+        <rdfs:subClassOf rdf:resource="&knowrob;Handle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;orientation"/>
+                <owl:hasValue rdf:resource="&roboearth;RotationMatrixExpeditHandle2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- &roboearth;IkeaExpedit2x4 -->
+
+    <owl:NamedIndividual rdf:about="&roboearth;IkeaExpedit2x4"/>
+
+
+
+
+    <!-- &roboearth;RotationMatrixDoor1 -->
+
+    <owl:NamedIndividual rdf:about="&roboearth;RotationMatrixExpeditDrawer1">
+        <rdf:type rdf:resource="&knowrob;RotationMatrix3D"/>
+        <knowrob:m00 rdf:datatype="&xsd;float">1.0</knowrob:m00>
+        <knowrob:m01 rdf:datatype="&xsd;float">0.0</knowrob:m01>
+        <knowrob:m02 rdf:datatype="&xsd;float">0.0</knowrob:m02>
+        <knowrob:m03 rdf:datatype="&qudt;Meter">-0.01</knowrob:m03>
+
+        <knowrob:m10 rdf:datatype="&xsd;float">0.0</knowrob:m10>
+        <knowrob:m11 rdf:datatype="&xsd;float">1.0</knowrob:m11>
+        <knowrob:m12 rdf:datatype="&xsd;float">0.0</knowrob:m12>
+        <knowrob:m13 rdf:datatype="&qudt;Meter">0.1755</knowrob:m13>
+
+        <knowrob:m20 rdf:datatype="&xsd;float">0.0</knowrob:m20>
+        <knowrob:m21 rdf:datatype="&xsd;float">0.0</knowrob:m21>
+        <knowrob:m22 rdf:datatype="&xsd;float">1.0</knowrob:m22>
+        <knowrob:m23 rdf:datatype="&qudt;Meter">0.1755</knowrob:m23>
+
+        <knowrob:m30 rdf:datatype="&xsd;float">0.0</knowrob:m30>
+        <knowrob:m31 rdf:datatype="&xsd;float">0.0</knowrob:m31>
+        <knowrob:m32 rdf:datatype="&xsd;float">0.0</knowrob:m32>
+        <knowrob:m33 rdf:datatype="&xsd;float">1.0</knowrob:m33>
+        <knowrob:relativeTo rdf:resource="&roboearth;IkeaExpedit2x4"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- &roboearth;RotationMatrixExpeditDrawer1 -->
+
+    <owl:NamedIndividual rdf:about="&roboearth;RotationMatrixDoor1">
+        <rdf:type rdf:resource="&knowrob;RotationMatrix3D"/>
+
+        <knowrob:m00 rdf:datatype="&xsd;float">1.0</knowrob:m00>
+        <knowrob:m01 rdf:datatype="&xsd;float">0.0</knowrob:m01>
+        <knowrob:m02 rdf:datatype="&xsd;float">0.0</knowrob:m02>
+        <knowrob:m03 rdf:datatype="&qudt;Meter">-0.01</knowrob:m03>
+
+        <knowrob:m10 rdf:datatype="&xsd;float">0.0</knowrob:m10>
+        <knowrob:m11 rdf:datatype="&xsd;float">1.0</knowrob:m11>
+        <knowrob:m12 rdf:datatype="&xsd;float">0.0</knowrob:m12>
+        <knowrob:m13 rdf:datatype="&qudt;Meter">-0.1755</knowrob:m13>
+
+        <knowrob:m20 rdf:datatype="&xsd;float">0.0</knowrob:m20>
+        <knowrob:m21 rdf:datatype="&xsd;float">0.0</knowrob:m21>
+        <knowrob:m22 rdf:datatype="&xsd;float">1.0</knowrob:m22>
+        <knowrob:m23 rdf:datatype="&qudt;Meter">0.1755</knowrob:m23>
+
+        <knowrob:m30 rdf:datatype="&xsd;float">0.0</knowrob:m30>
+        <knowrob:m31 rdf:datatype="&xsd;float">0.0</knowrob:m31>
+        <knowrob:m32 rdf:datatype="&xsd;float">0.0</knowrob:m32>
+        <knowrob:m33 rdf:datatype="&xsd;float">1.0</knowrob:m33>
+
+        <knowrob:relativeTo rdf:resource="&roboearth;IkeaExpedit2x4"/>
+    </owl:NamedIndividual>
+
+
+
+
+
+    <!-- &roboearth;RotationMatrixHandle1 -->
+
+    <owl:NamedIndividual rdf:about="&roboearth;RotationMatrixHandle1">
+        <rdf:type rdf:resource="&knowrob;RotationMatrix3D"/>
+
+        <knowrob:m00 rdf:datatype="&xsd;float">1.0</knowrob:m00>
+        <knowrob:m01 rdf:datatype="&xsd;float">0.0</knowrob:m01>
+        <knowrob:m02 rdf:datatype="&xsd;float">0.0</knowrob:m02>
+        <knowrob:m03 rdf:datatype="&qudt;Meter">-0.03</knowrob:m03>
+
+        <knowrob:m10 rdf:datatype="&xsd;float">0.0</knowrob:m10>
+        <knowrob:m11 rdf:datatype="&xsd;float">1.0</knowrob:m11>
+        <knowrob:m12 rdf:datatype="&xsd;float">0.0</knowrob:m12>
+        <knowrob:m13 rdf:datatype="&qudt;Meter">-0.15</knowrob:m13>
+
+        <knowrob:m20 rdf:datatype="&xsd;float">0.0</knowrob:m20>
+        <knowrob:m21 rdf:datatype="&xsd;float">0.0</knowrob:m21>
+        <knowrob:m22 rdf:datatype="&xsd;float">1.0</knowrob:m22>
+        <knowrob:m23 rdf:datatype="&qudt;Meter">0.0</knowrob:m23>
+
+        <knowrob:m30 rdf:datatype="&xsd;float">0.0</knowrob:m30>
+        <knowrob:m31 rdf:datatype="&xsd;float">0.0</knowrob:m31>
+        <knowrob:m32 rdf:datatype="&xsd;float">0.0</knowrob:m32>
+        <knowrob:m33 rdf:datatype="&xsd;float">1.0</knowrob:m33>
+
+        <knowrob:relativeTo rdf:resource="&roboearth;IkeaExpeditDoor1"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- &roboearth;RotationMatrixExpeditHandle2 -->
+
+    <owl:NamedIndividual rdf:about="&roboearth;RotationMatrixExpeditHandle2">
+        <rdf:type rdf:resource="&knowrob;RotationMatrix3D"/>
+
+        <knowrob:m00 rdf:datatype="&xsd;float">1.0</knowrob:m00>
+        <knowrob:m01 rdf:datatype="&xsd;float">0.0</knowrob:m01>
+        <knowrob:m02 rdf:datatype="&xsd;float">0.0</knowrob:m02>
+        <knowrob:m03 rdf:datatype="&qudt;Meter">-0.03</knowrob:m03>
+
+        <knowrob:m10 rdf:datatype="&xsd;float">0.0</knowrob:m10>
+        <knowrob:m11 rdf:datatype="&xsd;float">1.0</knowrob:m11>
+        <knowrob:m12 rdf:datatype="&xsd;float">0.0</knowrob:m12>
+        <knowrob:m13 rdf:datatype="&qudt;Meter">0.15</knowrob:m13>
+
+        <knowrob:m20 rdf:datatype="&xsd;float">0.0</knowrob:m20>
+        <knowrob:m21 rdf:datatype="&xsd;float">0.0</knowrob:m21>
+        <knowrob:m22 rdf:datatype="&xsd;float">1.0</knowrob:m22>
+        <knowrob:m23 rdf:datatype="&qudt;Meter">0.0</knowrob:m23>
+
+        <knowrob:m30 rdf:datatype="&xsd;float">0.0</knowrob:m30>
+        <knowrob:m31 rdf:datatype="&xsd;float">0.0</knowrob:m31>
+        <knowrob:m32 rdf:datatype="&xsd;float">0.0</knowrob:m32>
+        <knowrob:m33 rdf:datatype="&xsd;float">1.0</knowrob:m33>
+
+        <knowrob:relativeTo rdf:resource="&roboearth;RotationMatrixExpeditDrawer1"/>
+    </owl:NamedIndividual>
+
+
+</rdf:RDF>

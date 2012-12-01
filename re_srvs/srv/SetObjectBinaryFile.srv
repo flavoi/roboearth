@@ -1,0 +1,6 @@
+string objectUID   # an object's unique identifier
+re_msgs/File file  # file to add to the specified object's DB entry
+string apiKey      # the user's API key (get yours from 
+                   # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success       # success of request

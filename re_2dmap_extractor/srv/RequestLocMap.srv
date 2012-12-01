@@ -1,0 +1,9 @@
+re_msgs/RosFile octoMap # serialized 3D octomap
+float64 z               # height above ground at which to cut out the 2d map
+string targetMapName    # simple name of map file without extension,
+                        # .pgm / .yaml will be added to resulting files' names
+---
+bool success            # success of request
+re_msgs/RosFile locMap  # 2d map extracted at height 'z' (pgm format)
+re_msgs/RosFile locMeta # meta data (yaml format) 
+

@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY kb "http://ias.cs.tum.edu/kb/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY knowrob "http://ias.cs.tum.edu/kb/knowrob.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY joystick_drive "http://ias.cs.tum.edu/kb/joystick_drive.owl#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="&kb;joystick_drive.owl#"
+     xml:base="&kb;joystick_drive.owl"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:knowrob="&kb;knowrob.owl#"
+     xmlns:joystick_drive="&kb;joystick_drive.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:kb="http://ias.cs.tum.edu/kb/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="&kb;knowrob.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#subEvents -->
+
+    <owl:ObjectProperty rdf:about="&kb;knowrob.owl#subEvents"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#angularVelocity -->
+
+    <owl:DatatypeProperty rdf:about="#angularVelocity">
+        <rdfs:subPropertyOf rdf:resource="#velocity"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#linearVelocity -->
+
+    <owl:DatatypeProperty rdf:about="#linearVelocity">
+        <rdfs:subPropertyOf rdf:resource="#velocity"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#velocity -->
+
+    <owl:DatatypeProperty rdf:about="#velocity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#JoyStickDrive -->
+
+    <owl:Class rdf:about="#JoyStickDrive">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&kb;knowrob.owl#subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#Rot1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&kb;knowrob.owl#subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#Rot2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&kb;knowrob.owl#subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#Vel1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&kb;knowrob.owl#subEvents"/>
+                        <owl:someValuesFrom rdf:resource="#Vel2"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#orderingConstraints"/>
+                <owl:hasValue rdf:resource="#SubEventOrderingJoystick1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#orderingConstraints"/>
+                <owl:hasValue rdf:resource="#SubEventOrderingJoystick2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        
+        <rdfs:subClassOf rdf:resource="&kb;knowrob.owl#Action"/>
+    </owl:Class>
+
+    <PartialOrdering-Strict rdf:about="#SubEventOrderingJoystick1">
+        <occursBeforeInOrdering rdf:resource="#Vel1"/>
+        <occursAfterInOrdering rdf:resource="#Vel2"/>
+    </PartialOrdering-Strict>
+    <PartialOrdering-Strict rdf:about="#SubEventOrderingJoystick2">
+        <occursBeforeInOrdering rdf:resource="#Rot1"/>
+        <occursAfterInOrdering rdf:resource="#Rot2"/>
+    </PartialOrdering-Strict>
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#LinearVelocityCommand -->
+
+    <owl:Class rdf:about="#LinearVelocityCommand">
+        <rdfs:subClassOf rdf:resource="&kb;knowrob.owl#VelocityCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#Rot1 -->
+
+    <owl:Class rdf:about="#Rot1">
+        <rdfs:subClassOf rdf:resource="&kb;knowrob.owl#AngularVelocityCommand"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#angularVelocity"/>
+                <owl:hasValue rdf:datatype="&xsd;float">0.5</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#Rot2 -->
+
+    <owl:Class rdf:about="#Rot2">
+        <rdfs:subClassOf rdf:resource="&kb;knowrob.owl#AngularVelocityCommand"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#angularVelocity"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#Vel1 -->
+
+    <owl:Class rdf:about="#Vel1">
+        <rdfs:subClassOf rdf:resource="#LinearVelocityCommand"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#linearVelocity"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.3</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/joystick_drive.owl#Vel2 -->
+
+    <owl:Class rdf:about="#Vel2">
+        <rdfs:subClassOf rdf:resource="#LinearVelocityCommand"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#linearVelocity"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.9</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#Action -->
+
+    <owl:Class rdf:about="&kb;knowrob.owl#Action"/>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#AngularVelocityCommand -->
+
+    <owl:Class rdf:about="&kb;knowrob.owl#AngularVelocityCommand">
+        <rdfs:subClassOf rdf:resource="&kb;knowrob.owl#VelocityCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#VelocityCommand -->
+
+    <owl:Class rdf:about="&kb;knowrob.owl#VelocityCommand"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1101) http://owlapi.sourceforge.net -->
+

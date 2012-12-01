@@ -1,0 +1,10 @@
+re_msgs/RosFile octoMap # serialized 3D octomap
+float64 minZ            # minimum height to consider for 2d projection
+float64 maxZ            # maximum height to consider for 2d projection 
+string targetMapName    # simple name of map file without extension,
+                        # .pgm / .yaml will be added to resulting files' names
+---
+bool success            # success of request
+re_msgs/RosFile navMap  # projected 2d map between 'minZ' and 'maxZ' (pgm format)
+re_msgs/RosFile navMeta # meta data (yaml format) 
+

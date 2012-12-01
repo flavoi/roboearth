@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY local_path 'file://@OWL_PATH_PREFIX@/owl/'>
+    <!ENTITY srdl_path  'file://@SRDL_PATH_PREFIX@/owl/'>
+    <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns'>
+    <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+    <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+    <!ENTITY knowrob 'http://ias.cs.tum.edu/kb/knowrob.owl#'>
+    <!ENTITY srdl2 "http://ias.cs.tum.edu/kb/srdl2.owl#" >
+    <!ENTITY srdl2-comp "http://ias.cs.tum.edu/kb/srdl2-comp.owl#" >
+    <!ENTITY srdl2-cap "http://ias.cs.tum.edu/kb/srdl2-cap.owl#" >
+    <!ENTITY roboearth "http://www.roboearth.org/kb/roboearth.owl#" >
+]>
+
+<rdf:RDF
+    xmlns:rdf="&rdf;#"
+    xmlns:rdfs="&rdfs;"
+    xmlns:owl="&owl;"
+    xmlns:xsd="&xsd;"
+    xmlns:knowrob="&knowrob;"
+    xmlns="&roboearth;"
+    xml:base="http://www.roboearth.org/kb/roboearth.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="&xsd;string">
+
+        Ontology of actions and objects for RoboEarth
+
+        This ontology, derived from KnowRob, describes actions, objects and relations
+        between them that are specific for RoboEarth. It provides the language for
+        describing action recipes, environment models and object models.
+
+    </rdfs:comment>
+    <owl:imports rdf:resource="&local_path;knowrob.owl"/>
+    <owl:imports rdf:resource="&srdl_path;srdl2.owl"/>
+  </owl:Ontology>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#createdBy -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;createdBy"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#createdByAlgorithm -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;createdByAlgorithm">
+        <rdfs:range rdf:resource="&srdl2-comp;SoftwareComponent"/>
+        <rdfs:subPropertyOf rdf:resource="&roboearth;createdBy"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#providesModelFor -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;providesModelFor">
+        <rdfs:domain rdf:resource="&roboearth;ObjectRecognitionModel"/>
+        <rdfs:range rdf:resource="&owl;Class"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#qmatrix -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;qmatrix">
+        <rdfs:range rdf:resource="&knowrob;Matrix"/>
+        <rdfs:domain rdf:resource="&roboearth;ReinforcementLearningPolicy"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#recognizedUsingModel -->
+
+    <owl:ObjectProperty rdf:about="&roboearth;recognizedUsingModel">
+        <rdfs:domain rdf:resource="&knowrob;EnduringThing-Localized"/>
+        <rdfs:range rdf:resource="&roboearth;ObjectRecognitionModel"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#objectID -->
+
+    <owl:DatatypeProperty rdf:about="&knowrob;objectID"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#creationDateTime -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;creationDateTime">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#forAlgorithm -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;forAlgorithm"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#hyperlinkTo -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;hyperlinkTo"/>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#linkToCADModel -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;linkToCADModel">
+        <rdfs:subPropertyOf rdf:resource="&roboearth;hyperlinkTo"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#linkToImageData -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;linkToImageData">
+        <rdfs:subPropertyOf rdf:resource="&roboearth;hyperlinkTo"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#linkToImageFile -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;linkToImageFile">
+        <rdfs:subPropertyOf rdf:resource="&roboearth;hyperlinkTo"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#linkToMapFile -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;linkToMapFile">
+        <rdfs:subPropertyOf rdf:resource="&roboearth;hyperlinkTo"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#linkToRecognitionModel -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;linkToRecognitionModel">
+        <rdfs:subPropertyOf rdf:resource="&roboearth;hyperlinkTo"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#providedByMotionPrimitive -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;providedByMotionPrimitive">
+        <rdfs:domain rdf:resource="&knowrob;Action"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#roboearthObjID -->
+
+    <owl:DatatypeProperty rdf:about="&roboearth;roboearthObjID">
+        <rdfs:domain rdf:resource="&knowrob;EnduringThing-Localized"/>
+        <rdfs:subPropertyOf rdf:resource="&knowrob;objectID"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#SemanticEnvironmentMap -->
+
+    <owl:Class rdf:about="&knowrob;SemanticEnvironmentMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;ObjectMap"/>
+    </owl:Class>
+
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#BeaconMap -->
+
+    <owl:Class rdf:about="&roboearth;BeaconMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MetricMap"/>
+        <rdfs:subClassOf rdf:resource="&roboearth;TopologicalMap"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ClosingAGripper -->
+
+    <owl:Class rdf:about="&roboearth;ClosingAGripper">
+        <rdfs:subClassOf rdf:resource="&knowrob;ClosingAGripper"/>
+        <rdfs:subClassOf rdf:resource="&srdl2;SrdlRobotAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&roboearth;providedByMotionPrimitive"/>
+                <owl:hasValue rdf:datatype="&xsd;string">open_gripper</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#EnvironmentSpecification -->
+
+    <owl:Class rdf:about="&roboearth;EnvironmentSpecification">
+        <rdfs:subClassOf rdf:resource="&knowrob;Specification"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#GraspingSomething -->
+
+    <owl:Class rdf:about="&roboearth;GraspingSomething">
+        <rdfs:subClassOf rdf:resource="&knowrob;GraspingSomething"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#IASSemanticObjectMappingSystem -->
+
+    <owl:Class rdf:about="&roboearth;IASSemanticObjectMappingSystem">
+        <rdfs:subClassOf rdf:resource="&srdl2-comp;PerceptionComponent"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#LaserScannerMap -->
+
+    <owl:Class rdf:about="&roboearth;LaserScannerMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MapBuiltFromSensorData"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#MapBuiltFromSensorData -->
+
+    <owl:Class rdf:about="&roboearth;MapBuiltFromSensorData">
+        <rdfs:subClassOf rdf:resource="&knowrob;Map"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#MetricMap -->
+
+    <owl:Class rdf:about="&roboearth;MetricMap">
+        <rdfs:subClassOf rdf:resource="&knowrob;Map"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ObjectMap -->
+
+    <owl:Class rdf:about="&roboearth;ObjectMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MetricMap"/>
+        <rdfs:subClassOf rdf:resource="&roboearth;TopologicalMap"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ObjectRecognition -->
+
+    <owl:Class rdf:about="&roboearth;ObjectRecognition">
+        <rdfs:subClassOf rdf:resource="&srdl2-cap;Perceiving"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ObjectRecognitionModel -->
+
+    <owl:Class rdf:about="&roboearth;ObjectRecognitionModel">
+        <rdfs:subClassOf rdf:resource="&roboearth;ObjectSpecification"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ObjectRecognitionSystem -->
+
+    <owl:Class rdf:about="&roboearth;ObjectRecognitionSystem">
+        <rdfs:subClassOf rdf:resource="&srdl2-comp;PerceptionComponent"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ObjectSpecification -->
+
+    <owl:Class rdf:about="&roboearth;ObjectSpecification">
+        <rdfs:subClassOf rdf:resource="&knowrob;SoftwareObject"/>
+        <rdfs:subClassOf rdf:resource="&knowrob;Specification"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ReVslamMap -->
+
+    <owl:Class rdf:about="&roboearth;ReVslamMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;TopologicalMap"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#OccupancyGridMap -->
+
+    <owl:Class rdf:about="&roboearth;OccupancyGridMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MetricMap"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#OctoMap -->
+
+    <owl:Class rdf:about="&roboearth;OctoMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;ThreeDimensionalMap"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#OpeningAGripper -->
+
+    <owl:Class rdf:about="&roboearth;OpeningAGripper">
+        <rdfs:subClassOf rdf:resource="&knowrob;OpeningAGripper"/>
+        <rdfs:subClassOf rdf:resource="&srdl2;SrdlRobotAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&roboearth;providedByMotionPrimitive"/>
+                <owl:hasValue rdf:datatype="&xsd;string">open_gripper</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#PointMap -->
+
+    <owl:Class rdf:about="&roboearth;PointMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MetricMap"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#Policy -->
+
+    <owl:Class rdf:about="&roboearth;Policy">
+        <rdfs:subClassOf rdf:resource="&knowrob;Specification"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ReVisionPerception -->
+
+    <owl:Class rdf:about="&roboearth;ReVisionPerception">
+        <rdfs:subClassOf rdf:resource="&knowrob;VisualPerception"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ReVisionSystem -->
+
+    <owl:Class rdf:about="&roboearth;ReVisionSystem">
+        <rdfs:subClassOf rdf:resource="&srdl2-comp;PerceptionComponent"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#Reaching -->
+
+    <owl:Class rdf:about="&roboearth;Reaching">
+        <rdfs:subClassOf rdf:resource="&knowrob;Reaching"/>
+        <rdfs:subClassOf rdf:resource="&srdl2;SrdlRobotAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&roboearth;providedByMotionPrimitive"/>
+                <owl:hasValue rdf:datatype="&xsd;string">move_gripper</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ReinforcementLearningComponent -->
+
+    <owl:Class rdf:about="&roboearth;ReinforcementLearningComponent">
+        <rdfs:subClassOf rdf:resource="&srdl2-comp;LearningComponent"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ReinforcementLearningPolicy -->
+
+    <owl:Class rdf:about="&roboearth;ReinforcementLearningPolicy">
+        <rdfs:subClassOf rdf:resource="&roboearth;Policy"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthMazeLearning -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthMazeLearning">
+        <rdfs:subClassOf rdf:resource="&roboearth;RoboEarthReinforcementLearning"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthObjRecModel -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthObjRecModel">
+        <rdfs:subClassOf rdf:resource="&roboearth;ObjectRecognitionModel"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthObjRecModel3D -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthObjRecModel3D">
+        <rdfs:subClassOf rdf:resource="&roboearth;RoboEarthObjRecModel"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthObjRecModelPlanar -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthObjRecModelPlanar">
+        <rdfs:subClassOf rdf:resource="&roboearth;RoboEarthObjRecModel"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthObjRecSystem -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthObjRecSystem">
+        <rdfs:subClassOf rdf:resource="&roboearth;ObjectRecognitionSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&srdl2-comp;dependsOnComponent"/>
+                <owl:someValuesFrom rdf:resource="&roboearth;RoboEarthObjRecModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&srdl2-comp;dependsOnComponent"/>
+                <owl:someValuesFrom rdf:resource="&srdl2-comp;Camera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthRLPolicy -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthRLPolicy">
+        <rdfs:subClassOf rdf:resource="&roboearth;ReinforcementLearningPolicy"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#RoboEarthReinforcementLearning -->
+
+    <owl:Class rdf:about="&roboearth;RoboEarthReinforcementLearning">
+        <rdfs:subClassOf rdf:resource="&roboearth;ReinforcementLearningComponent"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#Serving -->
+
+    <owl:Class rdf:about="&roboearth;ServingFoodOrDrink">
+        <rdfs:subClassOf rdf:resource="&knowrob;ServingFoodOrDrink"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#SonarMap -->
+
+    <owl:Class rdf:about="&roboearth;SonarMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MapBuiltFromSensorData"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#StereoCameraMap -->
+
+    <owl:Class rdf:about="&roboearth;StereoCameraMap">
+        <rdfs:subClassOf rdf:resource="&roboearth;MapBuiltFromSensorData"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#ThreeDimensionalMap -->
+
+    <owl:Class rdf:about="&roboearth;ThreeDimensionalMap">
+        <rdfs:subClassOf rdf:resource="&knowrob;Map"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#TopologicalMap -->
+
+    <owl:Class rdf:about="&roboearth;TopologicalMap">
+        <rdfs:subClassOf rdf:resource="&knowrob;Map"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#Translation-LocationChange -->
+
+    <owl:Class rdf:about="&roboearth;Translation-LocationChange">
+        <rdfs:subClassOf rdf:resource="&knowrob;Translation-LocationChange"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&roboearth;providedByMotionPrimitive"/>
+                <owl:hasValue rdf:datatype="&xsd;string">navigate</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+
+    <!-- http://www.roboearth.org/kb/roboearth.owl#TwoDimensionalMap -->
+
+    <owl:Class rdf:about="&roboearth;TwoDimensionalMap">
+        <rdfs:subClassOf rdf:resource="&knowrob;Map"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.w3.org/2002/07/owl#Class -->
+
+    <owl:Class rdf:about="&owl;Class"/>
+
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

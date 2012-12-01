@@ -1,0 +1,16 @@
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/clean-test-results.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/detect.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/rosbuild_precompile.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/rospack_genmsg.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/rospack_gensrv.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/test.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/test-future.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/test-results.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/test-results-run.dir
+/home/flavio/Works/Roboearth_iaslab/stacks/roboearth/object_scanning/re_object_detector_gui/build/CMakeFiles/tests.dir

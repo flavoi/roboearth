@@ -1,0 +1,35 @@
+<package>
+  <description brief="RoboEarth's communication interface">
+
+     <p>
+     re_comm is a communication interface to the RoboEarth DB. It provides
+     services to download/upload/update/delete/query action recipes, object
+     models and environments.
+     </p>
+
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+  <author>Alexander Perzylo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.ros.org/wiki/re_comm</url>
+  <versioncontrol type="svn" url="https://ipvs.informatik.uni-stuttgart.de/roboearth/repos/release"/>
+
+  <depend package="rosjava_jni"/>
+  <depend package="re_ontology"/>
+  <depend package="re_msgs"/>
+  <depend package="re_srvs"/>
+  <depend package="vision_srvs"/>
+  <depend package="mod_vis"/>
+  <depend package="knowrob_cad_models"/>
+  <!--<depend package="re_wm_to_knowrob"/>-->
+
+  <export>
+    <java classpath="${prefix}/bin:${prefix}/lib/httpcomponents-client/commons-codec-1.4.jar:${prefix}/lib/httpcomponents-client/commons-logging-1.1.1.jar:${prefix}/lib/httpcomponents-client/httpclient-4.1.1.jar:${prefix}/lib/httpcomponents-client/httpclient-cache-4.1.1.jar:${prefix}/lib/httpcomponents-client/httpcore-4.1.jar:${prefix}/lib/httpcomponents-client/httpmime-4.1.1.jar:${prefix}/lib/jgrapht/jgrapht-jdk1.6.jar:${prefix}/lib/mysql/mysql-connector-java-5.1.13-bin.jar:${prefix}/lib/argo/argo-2.8.jar:${prefix}/lib/hermit/HermiT.jar"/>
+  </export>
+
+</package>
+
+

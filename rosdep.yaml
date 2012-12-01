@@ -1,0 +1,20 @@
+java:
+  debian: openjdk-6-jdk
+  ubuntu: openjdk-6-jdk
+
+qt4-qmake:
+  debian: qt4-qmake
+  ubuntu: qt4-qmake
+
+libqt4-dev:  
+  debian: libqt4-dev
+  ubuntu: libqt4-dev
+
+libgraphviz-dev:
+  ubuntu: libgraphviz-dev
+  debian: libgraphviz-dev
+
+ssh:
+  debian: ssh
+  ubuntu: ssh
+

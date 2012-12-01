@@ -1,0 +1,6 @@
+string objectUID   # an object's unique identifier
+string filename    # name of file related to object uid
+---
+bool success       # success of request
+re_msgs/File file  # requested file
+ 

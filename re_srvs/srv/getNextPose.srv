@@ -1,0 +1,4 @@
+geometry_msgs/Pose currentPose
+---
+geometry_msgs/Pose commandPose
+bool learningFinished

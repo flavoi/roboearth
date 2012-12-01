@@ -1,0 +1,6 @@
+string objectUID  # unique identifier of the object
+string filename   # name of file related to object uid
+string apiKey     # the user's API key (get yours from 
+                  # http://roboearth.informatik.uni-stuttgart.de)
+---
+bool success      # whether object was found and deleted

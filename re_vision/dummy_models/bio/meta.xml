@@ -1,0 +1,9 @@
+<model>
+	<name>bio</name>
+	<type>3D</type>
+	<faces>5</faces>
+	<dimensions>
+		<scale>1</scale>
+	</dimensions>
+</model>
+

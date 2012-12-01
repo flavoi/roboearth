@@ -1,0 +1,8 @@
+string searchID                  # unique identifier of an object (or
+                                 # any prefix of it)
+---
+bool success                     # success of request
+string[] uids                    # array of unique identifiers of found objects
+string[] objects                 # array of OWL encoded object descriptions
+re_msgs/StringArray[] filenames  # array of lists with object related filenames
+re_msgs/StringArray[] fileURLs   # array with URLs of object related files

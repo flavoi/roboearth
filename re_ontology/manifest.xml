@@ -1,0 +1,32 @@
+<package>
+  <description brief="re_ontology">
+
+     Package containing the base RoboEarth ontology.
+
+     The OWL ontology extends KnowRob with detailed descriptions of actions and objects as required for RoboEarth.
+
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+  <author>Moritz Tenorth</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/re_ontology</url>
+
+  <depend package="ias_knowledge_base"/>
+  <depend package="mod_srdl"/>
+  <depend package="re_msgs"/>
+  <depend package="comp_cop"/>
+  <depend package="comp_spatial"/>
+  <depend package="jpl"/>
+  <depend package="knowrob_objects"/>
+  <depend package="knowrob_actions"/>
+
+  <export>
+    <java classpath="${prefix}/bin"/>
+  </export>
+
+</package>
+
+

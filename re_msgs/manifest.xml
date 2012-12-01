@@ -1,0 +1,27 @@
+<package>
+  <description brief="RoboEarth's ROS message declarations">
+
+     <p>
+     re_msgs contains RoboEarth specific ROS message declarations.
+     </p>
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+  <author>Alexander Perzylo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.ros.org/wiki/re_msgs</url>
+  <versioncontrol type="svn" url="https://ipvs.informatik.uni-stuttgart.de/roboearth/repos/release"/>
+  <!--<export> <rosdoc external="http://roboearth.org/wiki"/> </export> -->
+
+  <depend package="geometry_msgs"/>
+  <depend package="std_msgs"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/msg/cpp"/>
+  </export>
+
+</package>
+
+

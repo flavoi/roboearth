@@ -1,0 +1,6 @@
+string objectUID    # the object's unique identifier
+---
+bool success        # success of request
+string object       # OWL encoded object description
+string[] filenames  # array with names of object related files
+string[] fileURLs   # array with URLs of object related files

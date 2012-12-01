@@ -1,0 +1,10 @@
+string envUID          # an environment's unique identifier
+string srdl            # semantic robot description (using SRDL)
+string baseScannerLink # name of URDF link representing the robot's base 
+                       # scanner used for localization
+string targetMapName   # simple name of map file without extension,
+                       # .pgm and .yaml will be added to resulting files' names                    
+---
+bool success           # success of request
+re_msgs/RosFile map    # 2d map (pgm format)
+re_msgs/RosFile meta   # meta file (yaml format)

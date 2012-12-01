@@ -1,0 +1,12 @@
+<!-- 
+ * Example of launching the ObjectDetector for simulation.
+ * Remap the /camera_info topic to your camera topic
+-->
+
+<launch>
+  <node name="ObjectDetectorDummy" pkg="re_vision" type="ObjectDetectorDummy" 
+    args="" cwd="node" output="screen">
+    <remap from="/camera_info" to="/camera_info" />
+  </node>
+</launch>
+

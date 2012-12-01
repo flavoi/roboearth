@@ -1,0 +1,7 @@
+<launch>
+
+    <param name="marker_dist_threshold" type="double" value="0.01" />
+    
+ 	<node pkg="ar_bounding_box" type="ar_kinect" name="ar_kinect" respawn="false" output="screen"/>
+ 	
+</launch>

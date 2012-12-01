@@ -1,0 +1,38 @@
+<package>
+  <description brief="re_object_detector_gui">
+     <p>
+     This package provides a user interface for downloading object models from
+     the RoboEarth database and to feed them to re_vision and
+     re_kinect_object_detector object detection algorithms.
+     </p>
+
+     <p>
+     This package is part of RoboEarth (EU FP7, grant 248942).
+     </p>
+  </description>
+  <author>Daniel Di Marco</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.ros.org/wiki/re_object_detector_gui</url>
+  <versioncontrol type="svn" url="https://ipvs.informatik.uni-stuttgart.de/roboearth/repos/release"/>
+  <!--<export> <rosdoc external="http://roboearth.org/wiki"/> </export> -->
+  <logo>http://www.roboearth.org/sites/default/files/RoboEarth.org_logo.gif</logo>
+
+  <rosdep name="qt4"/>
+
+  <depend package="roscpp"/>
+  <depend package="pcl"/>
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <!--depend package="pcl_visualization"/-->
+  <depend package="re_srvs"/>
+  <depend package="re_msgs"/>
+  <depend package="re_vision"/>
+  <depend package="re_kinect_object_detector"/>
+  <!-- for QMiniZip -->
+  <depend package="re_object_recorder"/>
+  <rosdep name="tinyxml" />
+
+</package>
+
+

@@ -1,0 +1,5 @@
+<launch>
+	<node name="knowrob" pkg="rosprolog" type="run_with_prolog_env"
+				args="re_comm $(find json_prolog)/bin/json_prolog" />
+	<include file="$(find mod_vis)/launch/communication_vis.launch"/>
+</launch>

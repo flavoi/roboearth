@@ -1,4 +1,4 @@
 roboearth
 =========
 
-Porting of the stack "roboearth" in ROS Fuerte.
+This is a porting of the stack in ROS Fuerte. Used in my Master thesis on Ubuntu 12.04 LTS.

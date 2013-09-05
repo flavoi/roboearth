@@ -1,7 +1,7 @@
 roboearth
 =========
 
-This is a porting of the stack in ROS Fuerte. Used in my master thesis on Ubuntu 12.04 LTS.
+This is a porting of the original stack to ROS Fuerte. It has been used in my master thesis on Ubuntu 12.04 LTS.
 
 Long story
 ----------
